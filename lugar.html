@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Posibles Lugares</h1>
+        <ul id="lista-lugares">
+            <li data-imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSEJDByNX4UgBMiNpJYOo5gZ1jnxItDBS9rw&s">Mango Village</li>
+            <li data-imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGb8g48XbNyS77YnNQwOmXVPr8QhrKz5vqbw&s">Ichanmiche</li>
+            <li data-imagen="https://i.pinimg.com/736x/b9/e8/06/b9e80604a962ee9108e2240031807e3a.jpg">Pollo Campestre</li>
+            <li data-imagen="https://i.pinimg.com/736x/dc/1f/cd/dc1fcd244c90520a4cb14eeb6e4b5e00.jpg">Pizza</li>
+            <li data-imagen="https://static.elmundo.sv/wp-content/uploads/2019/11/polideportivo.jpg">Poli Deportivo</li>
+        </ul>
+        <img id="imagen-lugar" src="" alt="Imagen del lugar" style="display:none; margin-top: 20px; width: 300px; height: auto;">
+        <a href="https://web.whatsapp.com/" class="button">🧐 Call Me 🫣</a>  
+    </div>
+    <script>
+        const listaLugares = document.querySelectorAll("#lista-lugares li");
+        const imagenLugar = document.getElementById("imagen-lugar");
+
+        // Evento para mostrar la imagen al hacer clic en un lugar
+        listaLugares.forEach(lugar => {
+            lugar.addEventListener("click", function() {
+                const imagenUrl = lugar.getAttribute("data-imagen");
+                imagenLugar.src = imagenUrl;
+                imagenLugar.style.display = "block"; // Muestra la imagen
+            });
+        });
+    </script>
+</body>
+</html>
